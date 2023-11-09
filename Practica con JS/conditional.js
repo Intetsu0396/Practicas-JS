@@ -30,5 +30,49 @@ else{
 // for: su erstructura es la siguiente
 // for(inicializacion; condicion; operacion)
 
-for(let)
+//probemos no crear un bucle infinito, ya que podemos bloquear la PC
+for(let i=0; i<10; i++){
+    console.log(i)
+}
+
+const estudiantes = ["Geral", "Nicol", "Camila", "Marieth", "Walter", "Maria"]
+//para poder imprimir un elemento dentro de una lista o un arreglo aplicamos lo siguiente
+// console.log(nombre de la lista o arreglo creado[#indice])
+//por  ejemplo.... 
+
+console.log(estudiantes[0])
+console.log(estudiantes[1])
+console.log(estudiantes[2])
+console.log(estudiantes[3])
+console.log(estudiantes[4])
+console.log(estudiantes[5])
+
+
+console.log("Hola " + estudiantes[0] + " eres un buen estudiante")
+
+for(let i = 0; i < estudiantes.length; i++){
+    console.log("Hola "+estudiantes[i]+" eres un buen estudiante")
+}
+
+/* for ...of: este bucle esta hecho para iterar arreglos o listas
+    su estructura es la siguiente: 
+    for(let ESPACIO_CONTENEDOR of nombre_lista){
+        console.log(ESPACIO_CONTENEDOR)
+    }*/
+
+for(let estudiante of estudiantes){
+    console.log(estudiante)
+}
+
+const frutas = ["Manzana","Pera","Durazno","Uva","Naranja"]
+for(let fruta of frutas){
+    console.log(fruta)
+}
+
+let contador = 0
+
+while(contador < 60){
+    console.log("Hola", contador)
+    contador++;
+}
 

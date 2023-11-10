@@ -227,3 +227,116 @@ function sumaNumeros (a,b){
 
 // llamamos a la funcion
 sumaNumeros(320,9680)
+
+// OBJETOS: esto es muy parecido a una matriz ya que nos permite 
+//almacenar varios datos dentro del objeto pero estos seran conocidos 
+// como propiedades que estas a su vez tiene un valor asignado
+
+// Se crea de la siguiente manera:
+
+let frutas = {
+    Familia: "Citricos",
+    cantidad: 200,
+    tipo: [`limon`,`naranja`, `mandarina`]
+} //esta es la estructura basica de un objeto 
+
+let usuario=  {
+    nombre: "Bibiana",
+    edad: 23,
+    estudiante: true,
+    "tiene pasaporte": true,
+    idiomas: {
+        nativo: "español",
+        Extranjero: {
+            ingles: "avanzado",
+            frances: "medio",
+            aleman: "basico"
+        }
+    }
+}
+// imprimir en consola
+console.log(usuario);
+
+// para acceder al valor especifico de una propiedad usuario...
+console.log(usuario.nombre)
+console.log(usuario.edad)
+console.log(usuario.estudiante)
+
+// para poder agregar propiedades junto con su valor
+usuario.carrera = "Diseño de interiores"
+console.log(usuario)
+
+// para eliminar una propiedad y su valor usamos ...
+delete usuario.estudiante;
+console.log(usuario);
+
+// para consultar la existencia de una propiedad usamos ...
+usuario.hasOwnProperty("edad"); 
+console.log(usuario.hasOwnProperty("edad"));
+// Si nos devuelve true quiere decir que si existe
+// Si nos deuelve false quiere decir que no existe
+
+
+// RECORDATORIO podemos usar los corchetes en vez de los puntos para 
+// acceder a las propiedades de un objeto
+
+usuario["estudiante"];
+console.log(usuario["carrera"]);
+console.log(usuario["tiene pasaporte"]);
+
+// apliquemos los corchetes
+console.log(("Mi idioma nativo es " + usuario.idiomas.nativo))
+console.log("ingles:",usuario["idiomas"]["Extranjero"]["ingles"])
+console.log("aleman:",usuario.idiomas["Extranjero"].aleman)
+// recordemos que si aplicamos los corchetes tenemos que usar " "
+
+
+//CONSTRUCTOR DE OBJETOS: como lo dice su nombre es una funcion 
+// estructurada para crear un objeto con las propiedades que le asignemos
+
+function Disco(artist, album, year ){
+    this.artist = artist
+    this.album = album
+    this.year = year
+}
+
+let disco1 = new Disco("Troye Sivan", "Something to give each other", 2023);
+console.log(disco1);
+
+
+let disco2 = new Disco("JVKE", "this is what ___ feels like", 2022);
+console.log(disco2);
+document.write(console.log(disco2)) 
+
+
+/* CLASE: hace referencia a un molde para la creacion de objetos
+muy parecido a lo que es un constructor de objetos pero en este
+caso tambien hay que definir metodos o las cosas que los objetos 
+pueden haccer */
+
+class Player{
+    // este es el bloque del constructor 
+    atributos(nombre, colorSombrero){
+        this.nombre = nombre;
+        this.colorSombrero = colorSombrero; 
+    }
+    saltar(){}
+    correr(){}
+    saludar(){
+        return `Hola soy ${this.nombre} y mi sombrero es 
+        ${this.colorSombrero}`
+    }
+}
+
+    let player1 = new Player("Mario", "rojo")
+    let player2 = new Player("Luigi", "verde")
+    let bibisaurio = new Player("Bibi", "negro")
+
+    console.log(player1);
+    console.log(player2);
+    console.log(bibisaurio);
+
+    console.log(player1.saludar());
+    console.log(player2.saludar());
+
+
